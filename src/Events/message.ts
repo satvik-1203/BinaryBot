@@ -10,7 +10,6 @@ export const event: Event = {
       .trim()
       .split("/ +/g");
     if (eventError(binary, message)) return;
-    console.log(message.content);
 
     const cmd = args.shift()?.toLowerCase();
     if (!cmd) return;
