@@ -3,6 +3,7 @@ import { GuildMember, MessageEmbed } from "discord.js";
 
 export const event: Event = {
   name: "guildMemberAdd",
+
   run: (binary, member: GuildMember) => {
     const channel = member.guild.channels.cache.find(
       ch => ch.name === "welcome"
