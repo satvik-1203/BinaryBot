@@ -20,12 +20,11 @@ class Binary extends Client {
     prefix: "",
   };
 
-  public setConfig(token: strUnd, mongooseURI: strUnd, prefix: strUnd) {
-    if (!token || !mongooseURI || !prefix)
-      return console.log("No env variables");
+  public setConfig(token: strUnd, mongooseURI: strUnd) {
+    if (!token || !mongooseURI) return console.log("No env variables");
 
     this.config.token = token;
-    this.config.prefix = prefix;
+    this.config.prefix = "^ping";
     this.config.mongooseURI = mongooseURI;
   }
   public async init() {
