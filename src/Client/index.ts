@@ -24,7 +24,7 @@ class Binary extends Client {
     if (!token || !mongooseURI) return console.log("No env variables");
 
     this.config.token = token;
-    this.config.prefix = "^ping";
+    this.config.prefix = "^binary";
     this.config.mongooseURI = mongooseURI;
   }
   public async init() {
