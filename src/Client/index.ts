@@ -2,7 +2,6 @@ import { Client, Collection, PresenceData, PartialTypes } from "discord.js";
 import path from "path";
 import { readdirSync } from "fs";
 import { Config, Command, Event } from "../Interfaces";
-import configJson from "config";
 
 type strUnd = string | undefined;
 
@@ -30,7 +29,7 @@ class Binary extends Client {
     this.config.mongooseURI = mongooseURI;
   }
   public async init() {
-    this.login(configJson.get("token"));
+    this.login(this.config.token);
 
     const commandPath = path.join(__dirname, "..", "/Commands");
     readdirSync(commandPath).forEach(dir => {
