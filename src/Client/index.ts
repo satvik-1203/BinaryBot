@@ -4,6 +4,8 @@ import { readdirSync } from "fs";
 import { Config, Command, Event } from "../Interfaces";
 import configJson from "config";
 
+type strUnd = string | undefined;
+
 class Binary extends Client {
   constructor(private partials?: PartialTypes[]) {
     super({ partials: partials });
@@ -12,11 +14,21 @@ class Binary extends Client {
   public commands: Collection<string, Command> = new Collection();
   public events: Collection<string, Event> = new Collection();
   public aliases: Collection<string, Command> = new Collection();
+
   public config: Config = {
-    token: configJson.get("token"),
-    mongooseURI: configJson.get("mongooseURI"),
-    prefix: configJson.get("prefix"),
+    token: "",
+    mongooseURI: "",
+    prefix: "",
   };
+
+  public setConfig(token: strUnd, mongooseURI: strUnd, prefix: strUnd) {
+    if (!token || !mongooseURI || !prefix)
+      return console.log("No env variables");
+
+    this.config.token = token;
+    this.config.prefix = prefix;
+    this.config.mongooseURI = mongooseURI;
+  }
   public async init() {
     this.login(configJson.get("token"));
 

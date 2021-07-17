@@ -1,9 +1,20 @@
 import Binary from "./Client";
-const binary = new Binary([
-  "CHANNEL",
-  "MESSAGE",
-  "REACTION",
-  "USER",
-  "GUILD_MEMBER",
-]);
-binary.init();
+require("dotenv").config();
+
+async function main() {
+  const binary = new Binary([
+    "CHANNEL",
+    "MESSAGE",
+    "REACTION",
+    "USER",
+    "GUILD_MEMBER",
+  ]);
+  binary.setConfig(
+    process.env.token,
+    process.env.mongooseURI,
+    process.env.prefix
+  );
+  await binary.init();
+}
+
+main();
