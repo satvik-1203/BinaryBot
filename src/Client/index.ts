@@ -1,10 +1,14 @@
-import { Client, Collection } from "discord.js";
+import { Client, Collection, PresenceData, PartialTypes } from "discord.js";
 import path from "path";
 import { readdirSync } from "fs";
 import { Config, Command, Event } from "../Interfaces";
 import configJson from "config";
 
 class Binary extends Client {
+  constructor(private partials?: PartialTypes[]) {
+    super({ partials: partials });
+  }
+
   public commands: Collection<string, Command> = new Collection();
   public events: Collection<string, Event> = new Collection();
   public aliases: Collection<string, Command> = new Collection();
