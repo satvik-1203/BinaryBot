@@ -1,12 +1,7 @@
 {
   "name": "binarybot",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "ISC",
-  "man": [
-    "dist/index.js",
-    "src/index.ts"
-  ],
   "scripts": {
     "start": "node dist/index.js",
     "dev:start": "ts-node src/index.ts",
