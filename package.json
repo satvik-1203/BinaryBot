@@ -1,0 +1,26 @@
+{
+  "name": "binarybot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "man": [
+    "dist/index.js",
+    "src/index.ts"
+  ],
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev:start": "ts-node src/index.ts",
+    "dev:watch": "nodemon src/index.ts"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "config": "^3.3.6",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "mongoose": "^5.13.3"
+  }
+}
