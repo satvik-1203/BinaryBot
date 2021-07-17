@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "license": "ISC",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
+    "side:start": "npm run build && node dist/index.js",
     "build": "tsc -p .",
-    "dev:start": "ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
     "dev:watch": "nodemon src/index.ts"
   },
   "devDependencies": {
