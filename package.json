@@ -9,12 +9,12 @@
     "dev:watch": "nodemon src/index.ts"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
-  },
-  "dependencies": {
+    "nodemon": "^2.0.12",
     "@types/config": "^0.0.39",
     "ts-node": "^10.1.0",
-    "@types/node": "^16.3.3",
+    "@types/node": "^16.3.3"
+  },
+  "dependencies": {
     "typescript": "^4.3.5",
     "axios": "^0.21.1",
     "config": "^3.3.6",
