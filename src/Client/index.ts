@@ -47,10 +47,12 @@ class Binary extends Client {
     });
 
     const eventPath = path.join(__dirname, "..", "/Events");
-    readdirSync(eventPath).forEach(async file => {
-      const { event } = await import(`${eventPath}/${file}`);
-      this.events.set(event.name, event);
-      this.on(event.name, event.run.bind(null, this));
+    readdirSync(eventPath).forEach(async dir => {
+      readdirSync(`${eventPath}/${dir}`).forEach(async file => {
+        const { event } = await import(`${eventPath}/${dir}/${file}`);
+        this.events.set(event.name, event);
+        this.on(event.name, event.run.bind(null, this));
+      });
     });
   }
 }

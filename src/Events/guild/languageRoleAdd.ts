@@ -1,6 +1,6 @@
 import { MessageReaction, User } from "discord.js";
-import { Event } from "../Interfaces";
-import languageRoles from "../misc/languageRoles";
+import { Event } from "../../Interfaces";
+import languageRoles from "../../misc/languageRoles";
 
 export const event: Event = {
   name: "messageReactionAdd",

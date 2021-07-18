@@ -1,4 +1,4 @@
-import { Event } from "../Interfaces";
+import { Event } from "../../Interfaces";
 import { GuildMember, MessageEmbed } from "discord.js";
 
 export const event: Event = {

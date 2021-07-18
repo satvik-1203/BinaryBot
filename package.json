@@ -9,6 +9,7 @@
     "dev:watch": "nodemon src/index.ts"
   },
   "devDependencies": {
+    "@types/bad-words": "^3.0.1",
     "@types/config": "^0.0.39",
     "@types/node": "^16.3.3",
     "nodemon": "^2.0.12",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "bad-words": "^3.0.4",
     "config": "^3.3.6",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",

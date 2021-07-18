@@ -1,6 +1,6 @@
 import { Message } from "discord.js";
-import { Event } from "../Interfaces";
-import eventError from "../misc/eventError";
+import { Event } from "../../Interfaces";
+import eventError from "../../misc/eventError";
 
 export const event: Event = {
   name: "message",
