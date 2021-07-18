@@ -3,7 +3,7 @@ import path from "path";
 import { readdirSync } from "fs";
 import { Config, Command, Event } from "../Interfaces";
 
-type strUnd = string | undefined;
+type env = string | undefined;
 
 class Binary extends Client {
   constructor(private partials?: PartialTypes[]) {
@@ -20,11 +20,12 @@ class Binary extends Client {
     prefix: "",
   };
 
-  public setConfig(token: strUnd, mongooseURI: strUnd) {
-    if (!token || !mongooseURI) return console.log("No env variables");
+  public setConfig(token: env, mongooseURI: env, prefix: env) {
+    if (!token || !mongooseURI || !prefix)
+      return console.log("No env variables");
 
     this.config.token = token;
-    this.config.prefix = "^binary";
+    this.config.prefix = prefix;
     this.config.mongooseURI = mongooseURI;
   }
   public async init() {
