@@ -1,1 +1,1 @@
-## Discord bot for BinaryGuiLd
+## Discord bot for BinaryGuild
