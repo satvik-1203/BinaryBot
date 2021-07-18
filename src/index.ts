@@ -9,7 +9,11 @@ async function main() {
     "USER",
     "GUILD_MEMBER",
   ]);
-  binary.setConfig(process.env.token, process.env.mongooseURI);
+  binary.setConfig(
+    process.env.token,
+    process.env.prefix,
+    process.env.mongooseURI
+  );
   await binary.init();
 }
 
