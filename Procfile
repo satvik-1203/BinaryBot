@@ -1,2 +1,2 @@
 worker: yarn dev:start
-proStat: yarn start
+proStart: yarn install -D && yarn dev:start
