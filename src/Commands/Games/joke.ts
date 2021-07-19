@@ -21,7 +21,7 @@ export const command: Command = {
     const embed = new MessageEmbed()
       .setTitle(`${data.type} Joke!`)
       .setColor("#00fcf5").setDescription(`
-				Question: ${data.setup}.
+				Question: ${data.setup}
 				Answer: ${data.punchline}.
 			`);
     message.channel.send(embed);

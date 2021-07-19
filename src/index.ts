@@ -14,7 +14,7 @@ async function main() {
   const binary = new Binary(partials);
   binary.setConfig(
     process.env.token,
-    process.env.mongooseUR,
+    process.env.mongooseURI,
     process.env.prefix
   );
   await binary.init();
