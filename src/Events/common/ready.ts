@@ -5,5 +5,12 @@ export const event: Event = {
   name: "ready",
   run: async (binary, message: Message) => {
     console.log("Listening...");
+    binary.user?.setPresence({
+      activity: {
+        name: "Prefix: ^binary",
+        type: "WATCHING",
+        url: "https://github.com/satvik-1203/BinaryBot",
+      },
+    });
   },
 };

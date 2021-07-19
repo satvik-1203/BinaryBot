@@ -5,7 +5,7 @@ import { MessageEmbed } from "discord.js";
 
 export const command: Command = {
   name: "help",
-  description: "sends a message of all the commands in the server",
+  description: "Sends a message of all the commands in the server",
   aliases: ["h"],
   run: (binary, message, cmd, args) => {
     let commandDescription = "**Prefix:** ^binary  \n\n";
