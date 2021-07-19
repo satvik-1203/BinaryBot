@@ -10,9 +10,15 @@ class Binary extends Client {
     super({ partials: partials });
   }
 
+  // Collection set
+
   public commands: Collection<string, Command> = new Collection();
+
   public events: Collection<string, Event> = new Collection();
+
   public aliases: Collection<string, Command> = new Collection();
+
+  public commandLength = 0;
 
   public config: Config = {
     token: "",
@@ -31,6 +37,10 @@ class Binary extends Client {
   public async init() {
     this.login(this.config.token);
 
+    // Need to change command readDir and event readDir more flexible
+
+    // For reading all the commands
+
     const commandPath = path.join(__dirname, "..", "/Commands");
     readdirSync(commandPath).forEach(dir => {
       const files = readdirSync(`${commandPath}/${dir}`).filter(file =>
@@ -39,6 +49,7 @@ class Binary extends Client {
       files.forEach(file => {
         const { command } = require(`${commandPath}/${dir}/${file}`);
         this.commands.set(command.name, command);
+        this.commandLength++;
         if (command.aliases?.length) {
           command.aliases.forEach((alias: any) =>
             this.aliases.set(alias, command)
@@ -46,6 +57,8 @@ class Binary extends Client {
         }
       });
     });
+
+    // for reading all the events
 
     const eventPath = path.join(__dirname, "..", "/Events");
     readdirSync(eventPath).forEach(async dir => {

@@ -1,18 +1,21 @@
 import Binary from "./Client";
+import { PartialTypes } from "discord.js";
 require("dotenv").config();
 
 async function main() {
-  const binary = new Binary([
+  const partials: PartialTypes[] = [
     "CHANNEL",
     "MESSAGE",
     "REACTION",
     "USER",
     "GUILD_MEMBER",
-  ]);
+  ];
+
+  const binary = new Binary(partials);
   binary.setConfig(
     process.env.token,
-    process.env.prefix,
-    process.env.mongooseURI
+    process.env.mongooseUR,
+    process.env.prefix
   );
   await binary.init();
 }
