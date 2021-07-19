@@ -3,21 +3,25 @@ import { PartialTypes } from "discord.js";
 require("dotenv").config();
 
 async function main() {
-  const partials: PartialTypes[] = [
-    "CHANNEL",
-    "MESSAGE",
-    "REACTION",
-    "USER",
-    "GUILD_MEMBER",
-  ];
+  try {
+    const partials: PartialTypes[] = [
+      "CHANNEL",
+      "MESSAGE",
+      "REACTION",
+      "USER",
+      "GUILD_MEMBER",
+    ];
 
-  const binary = new Binary(partials);
-  binary.setConfig(
-    process.env.token,
-    process.env.mongooseUR,
-    process.env.prefix
-  );
-  await binary.init();
+    const binary = new Binary(partials);
+    binary.setConfig(
+      process.env.token,
+      process.env.mongooseURI,
+      process.env.prefix
+    );
+    await binary.init();
+  } catch {
+    console.log("Something went wrong with the env variables");
+  }
 }
 
 main();

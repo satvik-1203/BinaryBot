@@ -28,7 +28,7 @@ class Binary extends Client {
 
   public setConfig(token: env, mongooseURI: env, prefix: env) {
     if (!token || !mongooseURI || !prefix)
-      return console.log("No env variables");
+      throw console.log("No env variables");
 
     this.config.token = token;
     this.config.prefix = prefix;
