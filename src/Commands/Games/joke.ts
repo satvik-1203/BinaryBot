@@ -12,8 +12,7 @@ interface Data {
 export const command: Command = {
   name: "joke",
   description: "Sends a joke",
-  run: async (binary, message, args) => {
-    console.log("cool");
+  run: async (binary, message, cmd, args) => {
     const { data } = await axios.get<Data>(
       "https://official-joke-api.appspot.com/random_joke"
     );
