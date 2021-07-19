@@ -2,7 +2,7 @@ import { Message } from "discord.js";
 import Binary from "../Client";
 
 interface Run {
-  (binary: Binary, message: Message, args: string[]): void;
+  (binary: Binary, message: Message, cmd: string, args: string[]): void;
 }
 export interface Command {
   name: string;

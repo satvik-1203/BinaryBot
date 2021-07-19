@@ -15,6 +15,6 @@ export const event: Event = {
     if (!cmd) return;
     const command = binary.commands.get(cmd) || binary.aliases.get(cmd);
     if (!command) return;
-    command.run(binary, message, args);
+    command.run(binary, message, cmd, args);
   },
 };
